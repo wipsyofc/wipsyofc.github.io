@@ -613,6 +613,7 @@ input[type='checkbox'] {
 .titresFormation {
     color: #404258;
     font-weight: bold;
+	font-size: large;
 }
 .diveDateFormation{
     width: 120px;
@@ -684,6 +685,126 @@ input[type='checkbox'] {
 	transform: scale(1.15);
 } 
 /* end of hover animation */
+
+
+/*******************/
+/*    Services     */
+/*******************/
+/* Styles de base */
+.box {
+    color: black; /* Par défaut, le texte est noir */
+    padding: 20px;
+    border-radius: 10px;
+    position: relative; /* Nécessaire pour positionner l'élément pseudo */
+    height: 300px; /* Ajuste la hauteur selon ton besoin */
+    overflow: hidden; /* Pour que l'effet de flou reste bien à l'intérieur */
+}
+
+/* Les icônes et titres doivent être en blanc et au-dessus du flou */
+.box i, .box h4 {
+    color: white; /* Les icônes et titres en blanc */
+    position: relative; /* S'assurer qu'ils sont au-dessus */
+    z-index: 1; /* Positionner les icônes et titres au-dessus de l'effet flou */
+}
+
+/* Les paragraphes doivent être en blanc */
+.box p {
+    color: white; /* Les paragraphes en blanc */
+    font-size: 16px;
+    position: relative; /* S'assurer que le texte est au-dessus de la superposition */
+    z-index: 1;
+}
+
+/* Ajouter l'effet de flou sombre avec un pseudo-élément */
+.box::before {
+    content: ''; /* Nécessaire pour créer un pseudo-élément */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Superposition sombre (ajuster l'opacité pour plus ou moins de sombre) */
+    backdrop-filter: blur(5px); /* Effet de flou */
+    z-index: 0; /* S'assurer que l'effet de flou est derrière le texte et les icônes */
+}
+
+/* Groupe 1 - Development & Conception */
+.dev-concept {
+    background-image: url('../images/code.JPG'); /* Remplace par l'URL de ton image */
+    background-size: cover;
+    background-position: center;
+}
+
+/* Groupe 2 - Virtualisation & Cloud Computing */
+.cloud-computing {
+    background-image: url('../images/cloud.JPG'); /* Remplace par l'URL de ton image */
+    background-size: cover;
+    background-position: center;
+}
+
+/* Groupe 3 - Administration des Données */
+.data-admin {
+    background-image: url('../images/db.png'); /* Remplace par l'URL de ton image */
+    background-size: cover;
+    background-position: center;
+}
+
+/* Groupe 4 - Réseaux Sociaux */
+.social-media {
+    background-image: url('../images/socialMedias.jpg'); /* Remplace par l'URL de ton image */
+    background-size: cover;
+    background-position: center;
+}
+
+/* Groupe 5 - Design & Graphisme */
+.design-graphism {
+    background-image: url('../images/flyer.jpg'); /* Remplace par l'URL de ton image */
+    background-size: cover;
+    background-position: center;
+}
+
+
+
+
+
+/* Style personnalisé pour les indicateurs du carrousel */
+.custom-indicators {
+	position: absolute;
+	bottom: 20px;
+	left: 50%;
+	transform: translateX(-50%);
+	display: flex;
+	justify-content: center;
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	z-index: 2; /* S'assurer que les indicateurs sont au-dessus de l'image */
+  }
+  
+  /* Style pour chaque indicateur */
+  .custom-indicators li {
+	width: 12px;
+	height: 12px;
+	margin: 0 5px;
+	border-radius: 50%;
+	background-color: rgba(255, 255, 255, 0.5); /* Gris clair semi-transparent */
+	transition: all 0.3s ease;
+	cursor: pointer;
+  }
+  
+  /* Lorsque l'indicateur est actif */
+  .custom-indicators .active {
+	background-color: #ffffff; /* Blanc pour l'indicateur actif */
+	transform: scale(1.2); /* Agrandissement de l'indicateur actif */
+  }
+  
+  /* Lorsque l'on survole un indicateur */
+  .custom-indicators li:hover {
+	background-color: #fff; /* Rendre l'indicateur blanc au survol */
+	transform: scale(1.3); /* Agrandissement au survol */
+  }
+  
+
 
 
 
