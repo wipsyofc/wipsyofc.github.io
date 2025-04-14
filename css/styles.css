@@ -529,26 +529,6 @@ input[type='checkbox'] {
 	margin-block: 20px;
 }
 
-/******** Copyrith Nav Mobil ********/
-.copyrightNav{
-	padding-top: 5px;
-	padding-bottom: 1px;
-	background-color: #000000;
-	text-align: center;
-  	bottom: 0;
-	position: fixed;
-	width:100%;
-}
-
-.copyrightNav .p-small {
-	color: #9da6ac;
-	text-align: center;
-}
-
-.copyrightNav a {
-	color: #9da6ac;
-}
-
 
 /******************/
 /*     Header     */
@@ -1230,10 +1210,6 @@ a:hover.back-to-top {
 		display: none;
 	}
 	.offcanvas-collapse .emailAdd{
-		display: none;
-	}
-	/******** Copyrith Nav Mobil ********/
-	.copyrightNav{
 		display: none;
 	}
 	/* end of navigation */
