@@ -76,3 +76,35 @@
 	});
 
 })(jQuery);
+
+
+
+
+//effet slide 
+let lastScrollY = window.scrollY;
+
+window.addEventListener("scroll", () => {
+  const currentScrollY = window.scrollY;
+  const goingUp = currentScrollY < lastScrollY;
+
+  document.querySelectorAll('.slide-block').forEach((el, i) => {
+    const rect = el.getBoundingClientRect();
+    const isVisible = rect.top < window.innerHeight * 0.85;
+
+    if (isVisible) {
+      el.classList.remove("visible-up", "visible-down");
+
+      // Choix de la direction
+      el.classList.add(goingUp ? "visible-up" : "visible-down");
+
+      // Délai pour l'effet en cascade
+      el.style.transitionDelay = `${i * 0.1}s`;
+    } else {
+      el.classList.remove("visible-up", "visible-down");
+      el.style.transitionDelay = "0s";
+    }
+  });
+
+  lastScrollY = currentScrollY;
+});
+

@@ -42,6 +42,7 @@ html {
 body, p {
 	color: #4d5055; 
 	font: 400 1rem/1.625rem "Open Sans", sans-serif;
+	overflow-x: hidden;
 }
 
 h1 {
@@ -397,6 +398,7 @@ input[type='checkbox'] {
 }
 
 .offcanvas-collapse {
+	text-align: center;
 	position: fixed;
 	top: 3.25rem; /* adjusts the height between the top of the page and the offcanvas menu */
 	bottom: 0;
@@ -511,6 +513,9 @@ input[type='checkbox'] {
 	padding: 0;
 	border: none;
 	font-size: 1.25rem;
+}
+.telechargerCvNavMobil{
+	margin-top: 80px;
 }
 
 
@@ -692,10 +697,10 @@ input[type='checkbox'] {
 /* Styles de base */
 .box {
     color: black; /* Par défaut, le texte est noir */
-    padding: 20px;
+    padding: 20px 40px 40px;
     border-radius: 10px;
     position: relative; /* Nécessaire pour positionner l'élément pseudo */
-    height: 300px; /* Ajuste la hauteur selon ton besoin */
+    height: fit-content; /* Ajuste la hauteur selon ton besoin */
     overflow: hidden; /* Pour que l'effet de flou reste bien à l'intérieur */
 }
 
@@ -708,8 +713,7 @@ input[type='checkbox'] {
 
 /* Les paragraphes doivent être en blanc */
 .box p {
-    color: white; /* Les paragraphes en blanc */
-    font-size: 16px;
+    color: white !important; /* Les paragraphes en blanc */
     position: relative; /* S'assurer que le texte est au-dessus de la superposition */
     z-index: 1;
 }
@@ -991,6 +995,29 @@ a:hover.back-to-top {
 	background-color: #0b36a8;
 }
 
+/***********************/
+/*     effet slide     */
+/***********************/
+.slide-block {
+	opacity: 0;
+	transform: translateX(30px);
+	transition: transform 0.4s ease-out, opacity 0.4s ease-out;
+	will-change: transform, opacity;
+  }
+  
+  .slide-block.visible-down {
+	opacity: 1;
+	transform: translateX(0);
+  }
+  
+  .slide-block.visible-up {
+	opacity: 1;
+  }
+  
+  
+  
+
+
 
 /***********************/
 /*     Extra Pages     */
@@ -1164,6 +1191,11 @@ a:hover.back-to-top {
 	.navbar .fa-stack {
 		margin-right: 0;
 		margin-left: 0.25rem;
+	}
+
+
+	.telechargerCvNavMobil{
+		display: none;
 	}
 	/* end of navigation */
 
