@@ -377,6 +377,7 @@ input[type='checkbox'] {
 	font-size: 0.875rem;
 	line-height: 0.875rem;
 	box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.025);
+	overflow: hidden;
 }
 
 .navbar .navbar-brand {
@@ -514,8 +515,38 @@ input[type='checkbox'] {
 	border: none;
 	font-size: 1.25rem;
 }
+
+/*** Telecharger le cv******/
 .telechargerCvNavMobil{
-	margin-top: 80px;
+	margin-top: 90px;
+}
+
+/******** Réseaux ********/
+.offcanvas-collapse .social-container {
+	margin-top: 50px;
+}
+.offcanvas-collapse .emailAdd{
+	margin-block: 20px;
+}
+
+/******** Copyrith Nav Mobil ********/
+.copyrightNav{
+	padding-top: 5px;
+	padding-bottom: 1px;
+	background-color: #000000;
+	text-align: center;
+  	bottom: 0;
+	position: fixed;
+	width:100%;
+}
+
+.copyrightNav .p-small {
+	color: #9da6ac;
+	text-align: center;
+}
+
+.copyrightNav a {
+	color: #9da6ac;
 }
 
 
@@ -1001,7 +1032,7 @@ a:hover.back-to-top {
 .slide-block {
 	opacity: 0;
 	transform: translateX(30px);
-	transition: transform 0.4s ease-out, opacity 0.4s ease-out;
+	transition: transform 0.3s ease-out, opacity 0.3s ease-out;
 	will-change: transform, opacity;
   }
   
@@ -1012,10 +1043,7 @@ a:hover.back-to-top {
   
   .slide-block.visible-up {
 	opacity: 1;
-  }
-  
-  
-  
+}
 
 
 
@@ -1195,6 +1223,17 @@ a:hover.back-to-top {
 
 
 	.telechargerCvNavMobil{
+		display: none;
+	}
+	/******** Réseaux ********/
+	.offcanvas-collapse .social-container {
+		display: none;
+	}
+	.offcanvas-collapse .emailAdd{
+		display: none;
+	}
+	/******** Copyrith Nav Mobil ********/
+	.copyrightNav{
 		display: none;
 	}
 	/* end of navigation */

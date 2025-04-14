@@ -87,18 +87,24 @@ window.addEventListener("scroll", () => {
   const currentScrollY = window.scrollY;
   const goingUp = currentScrollY < lastScrollY;
 
-  document.querySelectorAll('.slide-block').forEach((el, i) => {
+  // Récupère tous les éléments .slide-block visibles
+  const blocks = Array.from(document.querySelectorAll('.slide-block'));
+
+  // Trie selon leur position visuelle (du plus haut au plus bas)
+  const sortedBlocks = blocks.sort((a, b) => {
+    return a.getBoundingClientRect().top - b.getBoundingClientRect().top;
+  });
+
+  sortedBlocks.forEach((el, index) => {
     const rect = el.getBoundingClientRect();
     const isVisible = rect.top < window.innerHeight * 0.85;
 
     if (isVisible) {
       el.classList.remove("visible-up", "visible-down");
-
-      // Choix de la direction
       el.classList.add(goingUp ? "visible-up" : "visible-down");
 
-      // Délai pour l'effet en cascade
-      el.style.transitionDelay = `${i * 0.1}s`;
+      // Délai dynamique selon position réelle (plus rapide)
+      el.style.transitionDelay = `${Math.min(index * 0.05, 0.25)}s`;
     } else {
       el.classList.remove("visible-up", "visible-down");
       el.style.transitionDelay = "0s";
@@ -107,4 +113,5 @@ window.addEventListener("scroll", () => {
 
   lastScrollY = currentScrollY;
 });
+
 
