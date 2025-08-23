@@ -604,17 +604,19 @@ input[type='checkbox'] {
 /********************/
 /*   Competences    */
 /********************/
-.progress {
-    background-color: #B2C8DF;
-    border-radius: 3px;
+
+.divTechContenair{
+	margin-block: 20px;
 }
-.divBarreProgressionContenair {
-    margin-bottom: 10px;
+
+#logoCompetences{
+	height: 40px;
+	width: 40px;
+	margin-right: 50px;
 }
 .divTitreBarreProgression {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
 }
 
 /********************/

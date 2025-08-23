@@ -57,8 +57,7 @@
 	});
 	
 
-    /* Back To Top Button */
-    // create the back to top button
+    /*======================================= Back To Top Button =======================================*/
     $('body').prepend('<a href="body" class="back-to-top page-scroll">Back to Top</a>');
     var amountScrolled = 700;
     $(window).scroll(function() {
@@ -80,7 +79,7 @@
 
 
 
-//effet slide 
+//=======================================effet slide=======================================
 let lastScrollY = window.scrollY;
 
 window.addEventListener("scroll", () => {
@@ -115,3 +114,28 @@ window.addEventListener("scroll", () => {
 });
 
 
+//======================================= SCRIPT FORMULAIRE =======================================
+
+
+
+
+document.getElementById("consultation-form").addEventListener("submit", async function(event) {
+    event.preventDefault(); 
+
+    let formData = new FormData(this); // Récupère les données du formulaire
+
+    let response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData
+    });
+
+    let result = await response.json(); // Traite la réponse JSON
+
+    if (result.success) {
+        alert("Merci, votre message a été envoyé avec succès.\nWipsy M.");
+        this.reset(); // Réinitialise le formulaire
+        window.location.href = "/#"; // Redirige vers la page d'accueil
+    } else {
+        alert("Une erreur s'est produite, veuillez réessayer.");
+    }
+});
